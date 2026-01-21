@@ -15,24 +15,21 @@ export default function PlayerCard({ player }) {
       {/* FRONT SIDE */}
       <motion.div
         className="absolute inset-0"
+        initial={{ opacity: 1 }}
         whileHover={{ opacity: 0 }}
         transition={{ duration: 0.4 }}
       >
-        {/* IMAGE */}
         <img
           src={player.image}
           alt={player.name}
           className="w-full h-full object-cover"
         />
 
-        {/* OVERLAY INFO */}
         <div className="absolute bottom-0 w-full bg-gradient-to-t from-black/80 to-transparent p-5">
           <h3 className="text-barcaYellow text-2xl font-extrabold">
             {player.name}
           </h3>
-          <p className="text-white text-sm mt-1">
-            {player.position}
-          </p>
+          <p className="text-white text-sm mt-1">{player.position}</p>
           <span className="inline-block mt-2 px-3 py-1 rounded-full bg-barcaPink text-white font-bold text-sm">
             #{player.number}
           </span>
@@ -47,27 +44,52 @@ export default function PlayerCard({ player }) {
         transition={{ duration: 0.4 }}
       >
         <motion.h4
-          initial={{ scale: 0.8 }}
-          whileHover={{ scale: 1 }}
-          transition={{ duration: 0.3 }}
+          initial={{ y: -10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.4 }}
           className="text-barcaYellow text-2xl font-extrabold mb-4"
         >
           Trofeji sa Barçom
         </motion.h4>
 
-        <ul className="space-y-2">
-          {player.trophies.map((trophy, index) => (
+        <motion.ul
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.08,
+              },
+            },
+          }}
+          className="space-y-2"
+        >
+          {player.trophies.length > 0 ? (
+            player.trophies.map((trophy, index) => (
+              <motion.li
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, y: 10 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                className="text-white font-medium"
+              >
+                🏆 {trophy}
+              </motion.li>
+            ))
+          ) : (
             <motion.li
-              key={index}
-              initial={{ opacity: 0, x: -10 }}
-              whileHover={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.05 }}
-              className="text-white font-medium"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: { opacity: 1 },
+              }}
+              className="text-white italic"
             >
-              🏆 {trophy}
+              Još bez trofeja
             </motion.li>
-          ))}
-        </ul>
+          )}
+        </motion.ul>
 
         {/* DECORATIVE BALL */}
         <motion.div

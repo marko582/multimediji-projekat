@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
+import naslovna from "../assets/naslovna.jpg";
 
 export default function Home() {
   return (
     <div className="h-[90vh] flex items-center justify-center relative overflow-hidden">
-      <video
-        autoPlay
-        loop
-        muted
-        className="absolute w-full h-full object-cover opacity-30"
-        src="/videos/campnou.mp4"
+      <img
+        src={naslovna}
+        alt="Camp Nou"
+        className="absolute w-full h-full object-cover blur-sm opacity-15"
       />
+
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}

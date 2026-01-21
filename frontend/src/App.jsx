@@ -5,8 +5,8 @@ import Matches from "./pages/Matches";
 import Players from "./pages/Players";
 import Legends from "./pages/Legends";
 import Photos from "./pages/Photos";
-import FanZone from "./pages/FanZone";
 import Quiz from "./pages/Quiz";
+import Timeline from "./pages/TimeLine";
 
 export default function App() {
   return (
@@ -18,7 +18,7 @@ export default function App() {
           <Route path="/players" element={<Players />} />
           <Route path="/legends" element={<Legends />} />
           <Route path="/photos" element={<Photos />} />
-          <Route path="/fanzone" element={<FanZone />} />
+          <Route path="/timeline" element={<Timeline />} />
           <Route path="/quiz" element={<Quiz />} />
         </Route>
       </Routes>

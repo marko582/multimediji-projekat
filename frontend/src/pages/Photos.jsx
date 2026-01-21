@@ -32,14 +32,6 @@ const cardVariants = {
 export default function Photos() {
   return (
     <div className="relative">
-      {/* BACKGROUND VIDEO */}
-      <video
-        autoPlay
-        loop
-        muted
-        className="fixed top-0 left-0 w-full h-full object-cover opacity-10 -z-10"
-        src="/videos/photos-bg.mp4"
-      />
 
       {/* TITLE */}
       <motion.h2

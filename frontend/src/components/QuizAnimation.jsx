@@ -9,7 +9,7 @@ export default function QuizAnimation() {
 
   return (
     <div className="absolute inset-0 pointer-events-none">
-      {/* LOPTICE — u plavom div-u */}
+      {/* LOPTICE */}
       {balls.map((_, i) => (
         <motion.div
           key={i}
@@ -28,10 +28,10 @@ export default function QuizAnimation() {
         </motion.div>
       ))}
 
-      {/* VATROMETI — izvan plavog diva, slobodno na vrhu */}
+      {/* VATROMETI */}
       {fireworks.map((_, i) => {
-        const side = i === 0 ? 100 : window.innerWidth - 100; // pozicija levo/desno u px
-        const topPos = 50; // 50px od vrha
+        const side = i === 0 ? 100 : window.innerWidth - 100;
+        const topPos = 50;
         return (
           <div
             key={i}
@@ -53,7 +53,7 @@ export default function QuizAnimation() {
                     opacity: [1, 0],
                   }}
                   transition={{
-                    duration: 1.9, // duže od prethodnog
+                    duration: 1.9,
                     ease: "easeOut",
                     delay: j * 0.05,
                   }}
