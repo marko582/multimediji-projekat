@@ -2,8 +2,8 @@ import slika1 from "../assets/photos/slika1.jpg";
 import slika2 from "../assets/photos/slika2.jpg";
 import slika3 from "../assets/photos/slika3.jpg";
 import slika4 from "../assets/photos/slika4.jpg";
-import slika5 from "../assets/photos/slika1.jpg";
-import slika6 from "../assets/photos/slika2.jpg";
+import slika5 from "../assets/photos/slika5.jpg";
+import slika6 from "../assets/photos/slika6.jpg";
 
 const photos = [
   {

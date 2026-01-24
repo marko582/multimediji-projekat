@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Confetti from "react-confetti";
 import quizQuestions from "../data/quiz";
@@ -11,7 +11,18 @@ export default function Quiz() {
   const [feedback, setFeedback] = useState(null);
   const [showConfetti, setShowConfetti] = useState(false);
 
-  // Funkcija za nasumično biranje 10 pitanja
+  // Refovi za audio
+  const correctAudio = useRef(null);
+  const wrongAudio = useRef(null);
+
+  useEffect(() => {
+    generateQuestions();
+
+    // Inicijalizacija zvukova
+    correctAudio.current = new Audio("/sounds/correct.wav");
+    wrongAudio.current = new Audio("/sounds/wrong.wav");
+  }, []);
+
   const generateQuestions = () => {
     const shuffled = [...quizQuestions].sort(() => 0.5 - Math.random());
     setQuestions(shuffled.slice(0, 10));
@@ -21,10 +32,6 @@ export default function Quiz() {
     setShowConfetti(false);
   };
 
-  useEffect(() => {
-    generateQuestions();
-  }, []);
-
   const question = questions[index];
 
   const handleAnswer = (answer) => {
@@ -32,9 +39,11 @@ export default function Quiz() {
       setScore(score + 1);
       setFeedback("correct");
       setShowConfetti(true);
+      correctAudio.current.play(); // 🔊 tačan odgovor
       setTimeout(() => setShowConfetti(false), 1500);
     } else {
       setFeedback("wrong");
+      wrongAudio.current.play(); // 🔊 pogrešan odgovor
     }
 
     setTimeout(() => {
@@ -43,7 +52,6 @@ export default function Quiz() {
     }, 1200);
   };
 
-  // Kada su sva pitanja odgovorena
   if (!question) {
     return (
       <div className="text-center mt-32">
@@ -66,7 +74,6 @@ export default function Quiz() {
     );
   }
 
-  // Izračunavanje za progress bar
   const progressPercent = ((index) / questions.length) * 100;
 
   return (

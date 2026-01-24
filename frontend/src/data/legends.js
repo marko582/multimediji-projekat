@@ -3,8 +3,8 @@ import xaviImg from "../assets/legends/xavi.jpg";
 import ronaldinhoImg from "../assets/legends/ronaldihno.jpg"
 
 import messiVideo from "../assets/legends/videos/messi.mp4";
-import xaviVideo from "../assets/legends/videos/messi.mp4";
-import ronaldinhoVideo from "../assets/legends/videos/messi.mp4";
+import xaviVideo from "../assets/legends/videos/xavi.mp4";
+import ronaldinhoVideo from "../assets/legends/videos/ronaldihno.mp4";
 
 const legends = [
   {
