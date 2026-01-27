@@ -31,7 +31,7 @@ export default function TimelineItem({ item, onOpen }) {
         <h2 className="text-7xl font-extrabold text-barcaYellow truncate">
           {item.year}
         </h2>
-        <h3 className="text-4xl font-bold mt-4 truncate">{item.title}</h3>
+        <h3 className="text-4xl font-bold text-barcaYellow mt-4 truncate">{item.title}</h3>
         <p className="text-lg opacity-90 mt-6 max-w-2xl line-clamp-4">
           {item.description}
         </p>
