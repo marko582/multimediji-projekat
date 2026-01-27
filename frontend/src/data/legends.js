@@ -1,9 +1,9 @@
 import messiImg from "../assets/legends/messi.jpg";
-import xaviImg from "../assets/legends/xavi.jpg";
-import ronaldinhoImg from "../assets/legends/ronaldihno.jpg"
+import iniestaImg from "../assets/legends/iniesta.jpg";
+import ronaldinhoImg from "../assets/legends/ronaldihno.jpg";
 
 import messiVideo from "../assets/legends/videos/messi.mp4";
-import xaviVideo from "../assets/legends/videos/xavi.mp4";
+import iniestaVideo from "../assets/legends/videos/iniesta.mp4";
 import ronaldinhoVideo from "../assets/legends/videos/ronaldihno.mp4";
 
 const legends = [
@@ -17,10 +17,10 @@ const legends = [
   },
   {
     id: 2,
-    name: "Xavi Hernandez",
+    name: "Andres Iniesta",
     position: "Vezni igrač",
-    image: xaviImg,
-    video: xaviVideo,
+    image: iniestaImg,
+    video: iniestaVideo,
     description: "Mozak Barcelonine igre i simbol tiki-taka fudbala.",
   },
   {
